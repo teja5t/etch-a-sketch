@@ -34,6 +34,5 @@ body {
 }
 
 .box {
-    outline: solid thin;
     box-sizing: border-box;
 }
