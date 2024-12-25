@@ -1,6 +1,24 @@
-let paint = (box) => box.style.backgroundColor = "white";
+window.addEventListener("mousedown", () => {
+    isClicked = true;
+});
+
+window.addEventListener("mouseup", () => {
+    isClicked = false;
+});
+
+let paint = (box) => {
+    if (isClicked) {
+        box.style.backgroundColor = "white"
+        box.style.opacity = 1;
+    }
+};
 
 function makeGrid(size) {
+    if (size > 200) {
+        alert("Grid size must be under 200!");
+        return;
+    }
+
     const grid = document.querySelector(".container");
     grid.innerHTML = "";
 
@@ -22,8 +40,10 @@ function makeGrid(size) {
 }
 
 document.querySelector("#white").addEventListener("change", () => paint = (box) => {
-    box.style.backgroundColor = "white";
-    box.style.opacity = 1;
+    if (isClicked) {
+        box.style.backgroundColor = "white";
+        box.style.opacity = 1;
+    }
 })
 
 function getRandomColor() {
@@ -36,17 +56,23 @@ function getRandomColor() {
 }
 
 document.querySelector("#rainbow").addEventListener("change", () => paint = (box) => {
-    box.style.backgroundColor = getRandomColor();
-    box.style.opacity = 1;
+    if (isClicked) {
+        box.style.backgroundColor = getRandomColor();
+        box.style.opacity = 1;
+    }
 })
 
 document.querySelector("#shading").addEventListener("change", () => paint = (box) => {
-    box.style.opacity -= 0.1;
+    if (isClicked) {
+        box.style.opacity -= 0.1;
+    }
 })
 
 document.querySelector("#eraser").addEventListener("change", () => paint = (box) => {
-    box.style.backgroundColor = "black";
-    box.style.opacity = 1;
+    if (isClicked) {
+        box.style.backgroundColor = "black";
+        box.style.opacity = 1;
+    }
 })
 
 
