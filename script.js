@@ -1,3 +1,7 @@
+
+let r = 0;
+const rainbow = Array("#E81416", "#FFA500", "#FAEB36", "#79C314", "#487DE7", "#4B369D", "#70369D");
+
 window.addEventListener("mousedown", () => {
     isClicked = true;
 });
@@ -14,6 +18,7 @@ let paint = (box) => {
 };
 
 function makeGrid(size) {
+    r = 0;
     if (size > 200) {
         alert("Grid size must be under 200!");
         return;
@@ -55,9 +60,21 @@ function getRandomColor() {
     return color;
 }
 
-document.querySelector("#rainbow").addEventListener("change", () => paint = (box) => {
+document.querySelector("#random").addEventListener("change", () => paint = (box) => {
     if (isClicked) {
         box.style.backgroundColor = getRandomColor();
+        box.style.opacity = 1;
+    }
+})
+
+function getRainbowColor() {
+    r++;
+    return rainbow[r % 7];
+}   
+
+document.querySelector("#rainbow").addEventListener("change", () => paint = (box) => {
+    if (isClicked) {
+        box.style.backgroundColor = getRainbowColor();
         box.style.opacity = 1;
     }
 })
