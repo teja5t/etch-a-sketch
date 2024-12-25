@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-A-Sketch</title>
+    <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-    </div>
+    <h1>Etch-a-Sketch</h1>
+    <div class="content">
+        <div class="menu">
+            <p>Grid Size: <input type="text"> <button>Reset</button></p>
+            
+            <label for="white">White</label>
+            <input type="radio" id="white" name="brush-style" value="white" />
+            <br>
+            <label for="rainbow">Rainbow</label>
+            <input type="radio" id="Rainbow" name="brush-style" value="Rainbow" />
+            <br>
+            <label for="shading">Shading</label>
+            <input type="radio" id="shading" name="brush-style" value="shading" />
+            <br>
+            <label for="eraser">Eraser</label>
+            <input type="radio" id="eraser" name="brush-style" value="eraser" />
+            <br>
 
-    <script src="script.js"></script>
+            <label for="click-to-draw">Click to draw</label>
+            <input type="checkbox" id="click-to-draw" name="click-to-draw" />
+            <br>
+            <label for="show-boxes">Show boxes</label>
+            <input type="checkbox" id="show-boxes" name="show-boxes" />
+            <br>
+        </div>
+        <div class="container"></div>
+        <script src="script.js"></script>
+    </div>
 </body>
 </html>

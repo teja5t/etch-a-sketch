@@ -1,13 +1,31 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+.content {
+    display: flex;
+}
+
+.menu {
+    margin: 10px;
+}
+
 .container {
-    outline: solid thick;
+    border: solid;
     width: 500px;
     height: 500px;
 }
 
 .row {
     display: flex;
+    box-sizing: border-box;
 }
 
 .box {
     outline: solid thin;
+    box-sizing: border-box;
 }

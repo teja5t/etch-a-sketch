@@ -10,6 +10,10 @@ function makeGrid(size) {
             box.classList.add("box");
             box.style.width = 500 / size + "px";
             box.style.height = 500 / size + "px";
+            box.addEventListener("mouseenter", function paint() {
+                box.style.backgroundColor = "white";
+            }
+            );
             row.appendChild(box);
         }
 
@@ -17,4 +21,5 @@ function makeGrid(size) {
     }
 }
 
-makeGrid(100);
+
+makeGrid(20);
