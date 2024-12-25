@@ -1,5 +1,6 @@
 function makeGrid(size) {
     const grid = document.querySelector(".container");
+    grid.innerHTML = "";
 
     for (let i = 0; i < size; i++) {
         const row = document.createElement("div");
@@ -21,5 +22,6 @@ function makeGrid(size) {
     }
 }
 
-
-makeGrid(20);
+const newSize = document.querySelector(".resize");
+const resetBtn = document.querySelector(".reset");
+resetBtn.addEventListener("click",() => makeGrid(parseInt(newSize.value)));
