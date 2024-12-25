@@ -1,4 +1,3 @@
-
 let r = 0;
 const rainbow = Array("#E81416", "#FFA500", "#FAEB36", "#79C314", "#487DE7", "#4B369D", "#70369D");
 
