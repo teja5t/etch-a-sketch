@@ -1,5 +1,6 @@
 let r = 0;
 const rainbow = Array("#E81416", "#FFA500", "#FAEB36", "#79C314", "#487DE7", "#4B369D", "#70369D");
+isClicked = false;
 
 window.addEventListener("mousedown", () => {
     isClicked = true;
@@ -10,7 +11,7 @@ window.addEventListener("mouseup", () => {
 });
 
 let paint = (box) => {
-    if (isClicked) {
+    if (isClicked || event.type == "click") {
         box.style.backgroundColor = "white"
         box.style.opacity = 1;
     }
@@ -36,6 +37,7 @@ function makeGrid(size) {
             box.style.width = 500 / size + "px";
             box.style.height = 500 / size + "px";
             box.addEventListener("mouseenter", () => paint(box));
+            box.addEventListener("click", () => paint(box));
             row.appendChild(box);
         }
 
@@ -60,7 +62,7 @@ function getRandomColor() {
 }
 
 document.querySelector("#random").addEventListener("change", () => paint = (box) => {
-    if (isClicked) {
+    if (isClicked || event.type == "click") {
         box.style.backgroundColor = getRandomColor();
         box.style.opacity = 1;
     }
@@ -72,20 +74,20 @@ function getRainbowColor() {
 }   
 
 document.querySelector("#rainbow").addEventListener("change", () => paint = (box) => {
-    if (isClicked) {
+    if (isClicked || event.type == "click") {
         box.style.backgroundColor = getRainbowColor();
         box.style.opacity = 1;
     }
 })
 
 document.querySelector("#shading").addEventListener("change", () => paint = (box) => {
-    if (isClicked) {
+    if (isClicked || event.type == "click") {
         box.style.opacity -= 0.1;
     }
 })
 
 document.querySelector("#eraser").addEventListener("change", () => paint = (box) => {
-    if (isClicked) {
+    if (isClicked || event.type == "click") {
         box.style.backgroundColor = "black";
         box.style.opacity = 1;
     }
